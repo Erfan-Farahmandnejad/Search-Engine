@@ -1,0 +1,9 @@
+#ap_Main{
+    -fx-background-image: url(https://s31.picofile.com/file/8471335826/HD_wallpaper_black_cyan_gradient_blue_color_colors_neon_simple_solid.jpg);
+    -fx-background-radius: 30;
+}
+.text-field:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-transition-duration: 0.8s;
+}
