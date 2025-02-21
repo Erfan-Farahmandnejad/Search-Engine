@@ -228,6 +228,7 @@ public class FileOperations {
         }
         order=result.split(",");
         result=order.length+"\n"+result;
+        System.out.println(result);
         return result;
     }
 
