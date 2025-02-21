@@ -1,98 +1,86 @@
-<div dir='rtl' align="center">
-به نام پروردگار هدایت کننده به راه راست
+# 🔍 SearchEngine
 
-  دانشگاه اصفهان
+## 🚀 Java-Based Search Engine with Custom Data Structures
+SearchEngine is a lightweight, Java-based search engine that efficiently indexes and searches text data using custom map implementations. Built with JavaFX, it provides a simple yet powerful GUI for users to interact with the search system.
 
-  ساختمان داده – دکتر رمضانی 
+---
 
-  پاییز ۰۳-۰۲
+## 🌟 Features
+✅ **Fast text search** using optimized data structures  
+✅ **Custom Map Implementation** for efficient indexing  
+✅ **JavaFX GUI** for an interactive user experience  
+✅ **CSS-styled interface** with theme customization  
+✅ **Standalone operation** with no external dependencies  
+✅ **Maven-based build system** for easy dependency management  
 
-  پروژه چهارم –  موتور جستجو 
+---
 
+## 📁 Project Structure
+```
+SearchEngine/
+│── pom.xml                            # Maven project configuration
+│── mvnw, mvnw.cmd                     # Maven wrapper scripts
+│── src/
+│   ├── main/
+│   │   ├── java/com/example/searchengine/
+│   │   │   ├── FileOperations.java      # File handling and text processing
+│   │   │   ├── HelloApplication.java    # Main JavaFX application
+│   │   │   ├── MainController.java      # JavaFX controller for UI interactions
+│   │   │   ├── MapImplementation/       # Custom data structure implementations
+│   │   │   │   ├── AbstractMap.java
+│   │   │   │   ├── Entry.java
+│   │   │   │   ├── IMap.java
+│   │   │   │   ├── UnsortedTableMap.java
+│   │   ├── resources/com/example/searchengine/
+│   │   │   ├── Main.fxml                 # JavaFX UI layout
+│   │   │   ├── Alerts.css                # CSS for alerts and pop-ups
+│   │   │   ├── anchorPane.css            # General styling
+│   │   │   ├── images/                   # UI assets (icons, backgrounds)
+│── README.md                            # Project documentation
+```
 
-<img src="https://s24.picofile.com/file/8456084100/Picture44.png"  width="500"/>
-  
-  طراح پروژه : امیرعلی گلی ، الهام گرفته شده از کداستار
-</div>
+---
 
-<div dir='rtl' align="justify">
-  
-### مبحث : مپ 
-اهداف پروژه :
-+ کار با ساختمان داده مپ
-+ آشنایی با موتورهای جستجو و نحوه کار آن‌ها
+## 🔧 Installation & Setup
 
+### **1️⃣ Prerequisites**
+Ensure you have:
+- Java 11 or later
+- Maven installed (or use the provided Maven wrapper `mvnw`)
 
+### **2️⃣ Clone the Repository**
+```bash
+git clone https://github.com/Erfan-fn/SearchEngine.git
+cd SearchEngine
+```
 
-در این پروژه قرار است با استفاده از ساختمان‌داده مپ یک موتور جستجو را شبیه‌سازی کنید.
+### **3️⃣ Build the Project**
+Use Maven to build the project:
+```bash
+mvn clean package
+```
 
-## گام های پروژه
-### گام اول:
+### **4️⃣ Run the Application**
+```bash
+mvn javafx:run
+```
 
-قبل از شروع مطالعه روی دو سوال زیر فکر کنید تا ذهن شما آماده شود.
+---
 
-+ به روز‌های اول تشکیل شرکت گوگل فکر کنید، فرض کنید متن‌های چند صد هزار صفحه‌ی وب را جمع آوری کرده‌اید و می‌خواهید بین آن صفحات جستجو کنید. چه راه حلی برای اجرای کوئری چند کلمه‌ای کاربران بین هزاران صفحه متن که از قبل آماده شده است به ذهنتان می‌رسد؟
-    چطور می‌شود این جستجو را از مرتبه‌ی یک یا همان (O(1 انجام داد؟
+## 📌 Usage
 
-+ یکی از داده‌ساختارهایی که برای پیاده‌سازی موتور جستجو قابل‌استفاده است، Inverted Index می‌باشد. برای آشنایی با این داده ساختار  [Inverted Index - GeeksforGeeks](https://www.geeksforgeeks.org/inverted-index/)  را مطالعه کنید؛ سپس برای فهم بهتر ویدئوی     [The Inverted Index](https://www.youtube.com/watch?v=bnP6TsqyF30)   را مشاهده نمایید.
+### **Starting a Search**
+1. Launch the application.
+2. Select or provide a directory containing text files.
+3. Enter a search query.
+4. View search results instantly.
 
-### گام دوم:
+### **Customizing the UI**
+- Modify `CSS` files in `src/main/resources/com/example/searchengine/` to change UI styles.
+- Replace images in `src/main/resources/com/example/searchengine/images/` for custom themes.
 
-در گام بعدی، از ریپازیتوری پروژه Clone بگیرید تا در سیستم خود داشته باشید.
+---
 
+## 📜 License
+This project is open-source and available under the MIT License.
 
-
-### گام سوم :
-
-ما فایل‌های اسنادی داریم که حاوی کلمات انگلیسی هستند. 
-
-  [دانلود اسناد](https://star-academy.github.io/codestar-documents/assets/files/the-20-newsgroups-b28960092a8cf8e833bba736d4f3d433.zip)
-
-اسناد داده شده را بخوانید و به نحوی ویرایش کنید که فاقد هرگونه علائم نگارشی بوده و کلمات آن با اسپیس از هم جدا شده باشد. (کاراکتر اسپیس جداکننده تمامی کلمات است.)
-
-
-### گام چهارم : 
-
-برنامه خود را به گونه‌ای طراحی کنید که تعدادی Document را بخواند و از روی آن‌ها یک Inverted Index بسازد؛ سپس از کاربر یک کلمه به عنوان ورودی بگیرد و نام Documentهایی که شامل آن کلمه هستند را در خروجی نمایش دهد.
-
-دقت کنید که موتور جستجوی شما می‌تواند سه نوع ورودی از کاربر بگیرد:
-
-+ کلماتی که حتما باید در نتیجه وجود داشته باشند. این کلمات پیشوندی ندارند.
-+ کلماتی که حداقل یکی از آن‌ها باید در نتیجه وجود داشته باشند. این کلمات با پیشوند + مشخص می‌شوند.
-+ کلماتی که نباید در نتیجه وجود داشته باشند. این کلمات با پیشوند - مشخص می‌شوند.
-
-ورودی نوع اول مانند And، نوع دوم مانند Or و نوع سوم مانند Not می‌باشد.
-
-<details class="red"> 
-<summary>مثال</summary>
-
-> get help +illness +disease -cough
-
-با استفاده از Query بالا می‌توانیم Documentهایی را پیدا کنیم که حتماً شامل عبارات get و help و همچنین حداقل یکی از عبارات illness و disease باشند و شامل عبارت cough نباشند.
-  
-</details>
-### مطاله بیشتر:
-
-برای آشنایی بیشتر با نحوۀ کار موتور‌های جستجو دیدن ویدئوی [How Google searches one document among Billions of documents quickly](https://www.youtube.com/watch?v=CeGtqouT8eA) توصیه می‌شود.
-
-
-
-### بخش امتیازی:
-+	در صورت نبود یک کلمه در تمام متون، کلمات مشابه با یک اختلاف( تغییر در حروف، کم و زیاد شدن تعداد حروف)  را نشان داده و سپس سرچ کند. ( امتیاز بالا )
-+	استفاده از الستیک سرچ [Elasticsearch](https://github.com/Talkademy/Backend-Internship/tree/main/PHASE-10-Elasticsearch) برای ذخیره سازی اسناد و بازیابی آن‌ها با استفاده از queryهای آن (امتیازی متوسط)
-+	رابط کاربری گرافیکی ( امتیازی متوسط )
-
-
-
-## نکات تکمیلی :
-+ این پروژه بصورت تک نفری باید پیاده سازی شود.
-+ بستر پیاده سازی پروژه روی گیت‌هاب می‌باشد.
-+ سعی کنید هریک از بخش‌ها را در یک کامیت جداگانه انجام دهید.
-+ رعایت اصول کدنویسی تمیز بخش بسیار زیادی از نمره را به خود اختصاص می‌دهد و درصورتی که کد کاملا به شکل غیراصولی پیاده سازی شده باشد. تحویل گرفته نمی‌شود.
-+ استفاده از هر زبان، فریمورک و رابط‌های گرافیکی کاملا آزاد است. ( به غیر از زبان و فریمورک های پایتون )
-+ به افرادی که از تکلنولوژی‌های جدید استفاده کنند، توکن تمدید اضافه‌تر داده خواهد شد.
-
-
-
-
-</div>
